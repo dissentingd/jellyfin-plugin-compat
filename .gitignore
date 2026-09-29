@@ -1,0 +1,13 @@
+# .NET build output
+[Bb]in/
+[Oo]bj/
+out/
+artifacts/
+*.user
+*.suo
+.vs/
+.idea/
+TestResults/
+
+# Local working notes (not published)
+CLAUDE.md

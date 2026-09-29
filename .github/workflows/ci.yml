@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "10.0.x"
+      - run: dotnet build jellyfin-plugin-compat.sln -c Release
+      - run: dotnet test jellyfin-plugin-compat.sln -c Release --no-build
+      - run: dotnet publish Jellyfin.Plugin.PluginCompat -c Release --no-build -o out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jellyfin-plugin-compat
+          path: out/Jellyfin.Plugin.PluginCompat.dll

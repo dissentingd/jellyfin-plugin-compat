@@ -1,0 +1,15 @@
+# Metadata for packaging with jprm (https://github.com/oddstr13/jellyfin-plugin-repository-manager).
+name: "Plugin Compatibility Check"
+guid: "c6333b2f-8cd1-4160-b374-81e53189fdfb"
+version: "0.0.1.0"
+targetAbi: "12.1.0.0"
+framework: "net10.0"
+owner: "dissentingd"
+overview: "Before you upgrade Jellyfin, see which of your plugins will break."
+description: >
+  Checks every installed plugin against the plugin repositories for a target Jellyfin version: which have compatible builds, which need an update, which are abandoned or sideloaded, and after an upgrade, which were disabled and how to recover.
+category: "General"
+artifacts:
+  - "Jellyfin.Plugin.PluginCompat.dll"
+changelog: >
+  Scaffold only; not functional yet.
